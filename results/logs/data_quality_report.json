@@ -1,0 +1,110 @@
+{
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "record_count": 920,
+  "column_count": 17,
+  "columns": [
+    "dataset",
+    "age",
+    "sex",
+    "cp",
+    "trestbps",
+    "chol",
+    "fbs",
+    "restecg",
+    "thalch",
+    "exang",
+    "oldpeak",
+    "slope",
+    "ca",
+    "thal",
+    "num",
+    "num_original",
+    "target"
+  ],
+  "missingness": {
+    "dataset": {
+      "null_count": 0,
+      "null_pct": 0.0
+    },
+    "age": {
+      "null_count": 0,
+      "null_pct": 0.0
+    },
+    "sex": {
+      "null_count": 0,
+      "null_pct": 0.0
+    },
+    "cp": {
+      "null_count": 0,
+      "null_pct": 0.0
+    },
+    "trestbps": {
+      "null_count": 60,
+      "null_pct": 6.52
+    },
+    "chol": {
+      "null_count": 202,
+      "null_pct": 21.96
+    },
+    "fbs": {
+      "null_count": 90,
+      "null_pct": 9.78
+    },
+    "restecg": {
+      "null_count": 2,
+      "null_pct": 0.22
+    },
+    "thalch": {
+      "null_count": 55,
+      "null_pct": 5.98
+    },
+    "exang": {
+      "null_count": 55,
+      "null_pct": 5.98
+    },
+    "oldpeak": {
+      "null_count": 62,
+      "null_pct": 6.74
+    },
+    "slope": {
+      "null_count": 309,
+      "null_pct": 33.59
+    },
+    "ca": {
+      "null_count": 611,
+      "null_pct": 66.41
+    },
+    "thal": {
+      "null_count": 486,
+      "null_pct": 52.83
+    },
+    "num": {
+      "null_count": 0,
+      "null_pct": 0.0
+    },
+    "num_original": {
+      "null_count": 0,
+      "null_pct": 0.0
+    },
+    "target": {
+      "null_count": 0,
+      "null_pct": 0.0
+    }
+  },
+  "target_distribution": {
+    "1": 509,
+    "0": 411
+  },
+  "source_distribution": {
+    "Cleveland": 303,
+    "Hungary": 294,
+    "VA Long Beach": 200,
+    "Switzerland": 123
+  },
+  "physiologically_invalid_zeros": {
+    "trestbps": 0,
+    "chol": 0
+  }
+}

@@ -1,0 +1,53 @@
+# Experiment Configuration for Missing-Data Strategies and SHAP Stability
+# Matches PRD Section 9 (FR-04, FR-08) & Section 11 (11.2, 11.3)
+
+imputation_strategies:
+  M1:
+    name: "Median/Mode Imputation"
+    code: "M1"
+    description: "Simple imputation using median for continuous features and mode for categorical features"
+    numeric_strategy: "median"
+    categorical_strategy: "most_frequent"
+    add_indicator: false
+
+  M2:
+    name: "Median/Mode + Missingness Indicators"
+    code: "M2"
+    description: "Median/mode imputation augmented with binary missingness indicators to capture missing-data patterns"
+    numeric_strategy: "median"
+    categorical_strategy: "most_frequent"
+    add_indicator: true
+
+  M3:
+    name: "KNN Imputation"
+    code: "M3"
+    description: "Distance-weighted K-Nearest Neighbors imputation (k=5) for numeric features, mode for categorical"
+    numeric_strategy: "knn"
+    n_neighbors: 5
+    categorical_strategy: "most_frequent"
+    add_indicator: false
+
+  M4:
+    name: "Iterative Imputation (MICE)"
+    code: "M4"
+    description: "Multivariate Imputation by Chained Equations (IterativeImputer) for numeric features, mode for categorical"
+    numeric_strategy: "iterative"
+    max_iter: 10
+    random_state: 42
+    categorical_strategy: "most_frequent"
+    add_indicator: false
+
+experiment_runs:
+  seeds: [42, 101, 2024]
+  n_folds: 5
+  total_evaluations: 300 # 5 models * 4 strategies * 3 seeds * 5 folds
+
+shap_stability:
+  reference_sample_size: 100
+  top_k_values: [3, 5]
+  metrics:
+    - "spearman_rank_correlation"
+    - "top_k_jaccard_similarity"
+    - "patient_level_mean_absolute_difference"
+    - "attribution_correlation"
+  background_kmeans: 50

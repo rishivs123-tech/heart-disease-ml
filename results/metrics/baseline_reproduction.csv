@@ -1,0 +1,6 @@
+model,cv_accuracy_mean,cv_accuracy_std,cv_f1_mean,cv_f1_std,cv_roc_auc_mean,test_accuracy,test_precision,test_recall,test_specificity,test_f1_score,test_mcc,test_roc_auc,paper_accuracy_ref,paper_f1_ref,paper_roc_auc_ref,acc_delta_vs_paper
+Logistic Regression,0.8057,0.0137,0.8277,0.0107,0.8785,0.8152,0.8269,0.8431,0.7805,0.835,0.6253,0.8944,0.8315,0.845,0.895,-0.0163
+Random Forest,0.8139,0.027,0.8363,0.0177,0.8814,0.8043,0.7946,0.8725,0.7195,0.8318,0.603,0.9106,0.8478,0.86,0.912,-0.0435
+Support Vector Machine,0.8234,0.0286,0.8484,0.0167,0.886,0.8261,0.807,0.902,0.7317,0.8519,0.6487,0.8984,0.837,0.85,0.898,-0.0109
+K-Nearest Neighbors,0.8179,0.0403,0.8416,0.0288,0.8623,0.8043,0.8,0.8627,0.7317,0.8302,0.6026,0.8758,0.8207,0.835,0.872,-0.0164
+Gradient Boosting,0.7935,0.021,0.8181,0.0165,0.8645,0.837,0.8333,0.8824,0.7805,0.8571,0.6691,0.8973,0.8533,0.8675,0.918,-0.0163

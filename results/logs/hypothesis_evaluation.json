@@ -1,0 +1,17 @@
+{
+  "H1": {
+    "hypothesis": "Missing-data handling strategies produce measurable differences in predictive performance.",
+    "supported": true,
+    "evidence": "Observed cross-validation accuracy differences across M1 (median), M2 (indicator), M3 (KNN), and M4 (MICE). Iterative and KNN imputation yielded minor improvements over simple median, particularly for models sensitive to covariance structure such as Logistic Regression and SVM."
+  },
+  "H2": {
+    "hypothesis": "SHAP explanations vary across models, data splits, and imputation strategies.",
+    "supported": true,
+    "evidence": "Patient-level and global SHAP attributions demonstrated measurable variance. Random Forest maintained high rank correlation (0.987), but top-5 feature overlap was not 100% (75.6%), indicating attribution sensitivity to training subsamples and feature representations."
+  },
+  "H3": {
+    "hypothesis": "The model with the best predictive performance may not have the most stable explanations.",
+    "supported": true,
+    "evidence": "While ensemble methods (Gradient Boosting and Random Forest) achieved the highest predictive accuracy and ROC-AUC, linear models exhibited competitive or higher attribution stability due to the strict monotonic nature of coefficients, confirming that predictive optimality does not guarantee explanation invariance."
+  }
+}

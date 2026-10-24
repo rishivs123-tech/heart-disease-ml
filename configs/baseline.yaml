@@ -1,0 +1,70 @@
+# Baseline Configuration for Heart Disease Prediction
+# Matches PRD Section 11: Experimental Methodology
+
+project:
+  name: "Heart Disease Prediction Using Machine Learning"
+  extension: "Explainable and Robust Heart Disease Prediction: Evaluating Missing-Data Strategies and SHAP Explanation Stability"
+  version: "1.0.0"
+  random_seed: 42
+
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  raw_file: "data/raw/heart_disease_combined_raw.csv"
+  processed_file: "data/processed/heart_disease_cleaned.csv"
+  train_file: "data/processed/train.csv"
+  test_file: "data/processed/test.csv"
+  test_size: 0.20
+  expected_total_records: 920
+  expected_train_records: 736
+  expected_test_records: 184
+  stratify_column: "target"
+
+features:
+  numeric:
+    - age
+    - trestbps
+    - chol
+    - thalch
+    - oldpeak
+  categorical:
+    - sex
+    - cp
+    - fbs
+    - restecg
+    - exang
+    - slope
+    - ca
+    - thal
+  target: "target"
+  original_target: "num"
+  dataset_source: "dataset"
+
+baseline_models:
+  logistic_regression:
+    C: 1.0
+    solver: "lbfgs"
+    max_iter: 1000
+    random_state: 42
+  random_forest:
+    n_estimators: 200
+    max_depth: 10
+    random_state: 42
+  svm:
+    kernel: "rbf"
+    C: 1.0
+    probability: true
+    random_state: 42
+  knn:
+    n_neighbors: 7
+    weights: "uniform"
+  gradient_boosting:
+    n_estimators: 200
+    learning_rate: 0.1
+    max_depth: 2
+    random_state: 42
+
+cross_validation:
+  n_splits: 5
+  shuffle: true
+  random_state: 42
