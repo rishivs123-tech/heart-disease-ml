@@ -1,5 +1,6 @@
-# 🫀 Heart Disease Prediction Using Machine Learning
-### **Proposed Research Extension**: Explainable and Robust Heart Disease Prediction: Evaluating Missing-Data Strategies and SHAP Explanation Stability
+# Heart Disease Prediction Using Machine Learning
+
+### Proposed Research Extension: Explainable and Robust Heart Disease Prediction: Evaluating Missing-Data Strategies and SHAP Explanation Stability
 
 [![Python 3.12+](https://img.shields.io/badge/Python-3.12%20%7C%203.13-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -9,11 +10,11 @@
 
 ---
 
-## 📌 1. Project Overview & Research Contribution
-This repository contains the complete Master of Engineering (ME) dissertation research software prototype and scientific reproducibility framework. 
+## 1. Project Overview & Research Contribution
+This repository contains the software implementation and experimental framework for an ME dissertation in machine learning and healthcare analytics.
 
-The project accomplishes two primary research goals:
-1. **Faithful Baseline Reproduction**: Reproduces the comparative study on heart disease prediction using the benchmark **920-record combined UCI Heart Disease cohort** (Cleveland, Hungary, Switzerland, VA Long Beach) across five supervised learning classifiers:
+The project addresses two primary goals:
+1. **Baseline Reproduction**: Reproduces the comparative study on heart disease prediction using the benchmark **920-record combined UCI Heart Disease cohort** (Cleveland, Hungary, Switzerland, VA Long Beach) across five supervised learning classifiers:
    - Logistic Regression (LR)
    - Random Forest (RF)
    - Support Vector Machine (SVM)
@@ -26,33 +27,22 @@ The project accomplishes two primary research goals:
      - **M3**: Distance-Weighted K-Nearest Neighbors Imputation (KNN, $k=5$)
      - **M4**: Multivariate Imputation by Chained Equations (Iterative / MICE)
    - Investigates **SHAP (SHapley Additive exPlanations) Explanation Stability** across repeated stratified data splits and model runs.
-   - Quantifies whether predictive optimality correlates with attribution stability across model families.
-3. **Interactive Local Demonstrator**: Provides a full-featured, dark/light theme modern **Streamlit Web Application** featuring real-time clinical prediction, dynamic patient-level SHAP waterfall charts, model benchmark comparisons, and dissertation findings.
+   - Quantifies whether predictive performance correlates with attribution stability across model families.
+3. **Interactive Demonstrator**: Provides a multi-page **Streamlit Web Application** featuring real-time clinical prediction, dynamic patient-level SHAP waterfall charts, model benchmark comparisons, and dissertation findings.
 
 ---
 
-## 📦 2. What to Do with the Provided ZIP File (`heart-disease-ml.zip`)
+## 2. Setup and Installation
 
-If you downloaded the project as a `.zip` archive:
-
-### Step 1: Extract the Archive
-Extract the contents of `heart-disease-ml.zip` into your preferred project directory on your computer:
-- **Windows**: Right-click `heart-disease-ml.zip` ➔ **Extract All...** ➔ Choose destination (e.g., `C:\Projects\heart-disease-ml`)
-- **Mac/Linux**:
-  ```bash
-  unzip heart-disease-ml.zip -d heart-disease-ml
-  cd heart-disease-ml
-  ```
-
-### Step 2: Open in VS Code (or your preferred IDE)
-Launch Visual Studio Code and open the extracted folder:
+### Step 1: Extract Archive or Clone Repository
+If you downloaded the project as a `.zip` archive, extract `heart-disease-ml.zip` into your working directory:
 ```bash
-code .
+unzip heart-disease-ml.zip -d heart-disease-ml
+cd heart-disease-ml
 ```
-*(Or in VS Code: **File** ➔ **Open Folder...** ➔ Select the extracted folder).*
 
-### Step 3: Set Up Python Virtual Environment
-Open a terminal in the project root:
+### Step 2: Set Up Python Virtual Environment
+Open a terminal in the project directory:
 ```bash
 # Windows (PowerShell):
 python -m venv venv
@@ -63,34 +53,34 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-### Step 4: Install Dependencies
+### Step 3: Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
-*(All exact package versions are also recorded in `requirements-lock.txt` for absolute reproducibility).*
+*(Exact pinned dependencies are also documented in `requirements-lock.txt`).*
 
 ---
 
-## 🚀 3. Quick Start: Launching the Streamlit Web Application
+## 3. Running the Streamlit Web Application
 
-To launch the interactive multi-page web application:
+To launch the multi-page web application:
 ```bash
 streamlit run app/Home.py
 ```
-Your default browser will automatically open to `http://localhost:8501`.
+Open `http://localhost:8501` in your browser.
 
-### 🖥️ Application Pages Overview:
-1. **Home (`app/Home.py`)**: Executive summary, research questions, system architecture, and 920-record dataset inspection.
-2. **1. Clinical Prediction (`app/pages/1_Prediction.py`)**: Interactive diagnostic prediction form with clinical defaults, input validation, risk gauge charts, and preset patient case studies.
-3. **2. Prediction Explanation (`app/pages/2_Explanation.py`)**: Local patient-level SHAP waterfall attributions, color-coded risk factors (red = increases risk, green = protective), and clinical narrative generation.
-4. **3. Model Performance (`app/pages/3_Model_Performance.py`)**: Empirical reproduction benchmark table, confusion matrices, ROC curves, cross-validation metrics, and statistical significance tests.
-5. **4. Research Findings (`app/pages/4_Research_Findings.py`)**: Quantitative SHAP stability metrics (Spearman rank, Top-5 Jaccard, MAD), global feature rankings, empirical hypothesis evaluation (H1–H3), and clinical limitations.
+### Application Structure:
+- **Home (`app/Home.py`)**: Overview, research questions, system architecture, and 920-record dataset inspection.
+- **1. Prediction (`app/pages/1_Prediction.py`)**: Clinical diagnostic prediction form with patient presets, risk gauge charts, and model selection.
+- **2. Explanation (`app/pages/2_Explanation.py`)**: Local patient-level SHAP waterfall attributions, feature contribution tables, and clinical summaries.
+- **3. Model Performance (`app/pages/3_Model_Performance.py`)**: Empirical reproduction benchmark table, confusion matrices, ROC curves, cross-validation metrics, and paired statistical tests.
+- **4. Research Findings (`app/pages/4_Research_Findings.py`)**: Quantitative SHAP stability metrics (Spearman rank, Top-5 Jaccard, MAD), global feature rankings, empirical hypothesis evaluation (H1–H3), and clinical limitations.
 
 ---
 
-## 🧪 4. Running the Automated Test Suite
+## 4. Running Automated Tests
 
-Run the full automated test suite with pytest:
+Run the test suite with pytest:
 ```bash
 # Windows PowerShell:
 $env:PYTHONPATH="."
@@ -99,13 +89,13 @@ pytest
 # Linux / macOS:
 PYTHONPATH=. pytest
 ```
-**Test Results**: 12/12 unit and integration tests passing covering data validation, preprocessing, M1–M4 imputation, model factories, metrics calculation, and SHAP stability algorithms.
+All 12 unit and integration tests verify data validation, preprocessing, M1–M4 imputation, model factories, metrics calculation, and SHAP stability algorithms.
 
 ---
 
-## 🔬 5. Reproducing the Experiments from Scratch
+## 5. Reproducing Experiments from Scratch
 
-All baseline and experimental metrics, figures, logs, and trained model pipelines are **precomputed and saved** in the repository. However, you can regenerate everything from scratch at any time:
+All baseline and experimental metrics, figures, logs, and trained model pipelines are **precomputed and saved** in the repository. To re-run the experiments:
 
 ### 1. Ingest and Validate Dataset (920 Records)
 ```bash
@@ -147,7 +137,7 @@ python -m src.heart_disease.experiments.run_stability
 
 ---
 
-## 📁 6. Repository File and Folder Structure
+## 6. Repository File and Folder Structure
 
 ```
 PROJECT-X/
@@ -217,7 +207,7 @@ PROJECT-X/
 │   │   └── Appendices.md                     # Data dictionary, setup & reproduction instructions
 │   └── Full_Dissertation.md                  # Unified comprehensive academic dissertation draft
 ├── tests/
-│   ├── test_data.py                          # Tests for data loading and acceptance criteria
+│   ├── test_data.py                          # Tests for data loading and schema validation
 │   ├── test_preprocessing.py                 # Tests for M1-M4 imputation and feature names
 │   ├── test_models.py                        # Tests for classifiers and metric computations
 │   └── test_explainability.py                # Tests for SHAP stability mathematical functions
@@ -229,9 +219,9 @@ PROJECT-X/
 
 ---
 
-## 📑 7. Master Dissertation Documentation
+## 7. Master Dissertation Documentation
 
-The complete academic dissertation is provided in both modular chapter format and as a unified master manuscript:
+The academic dissertation is provided in both modular chapter format and as a unified master manuscript:
 - **Unified Master Dissertation**: [`dissertation/Full_Dissertation.md`](dissertation/Full_Dissertation.md)
 - **Individual Chapters**:
   - [Chapter 1: Introduction](dissertation/chapters/Chapter1_Introduction.md)
@@ -244,10 +234,10 @@ The complete academic dissertation is provided in both modular chapter format an
 
 ---
 
-## ⚖️ 8. Research Prototype and Medical Disclaimer
+## 8. Medical & Research Disclaimer
 
-> **IMPORTANT CLINICAL & ETHICAL NOTICE**:  
+> **Research Prototype Notice**:  
 > This software system is an academic research prototype developed as part of a Master of Engineering dissertation. It is intended solely for scientific investigation, machine learning benchmarking, and explainability evaluation.  
 > - It is **NOT** a certified medical diagnostic device.  
-> - It has not undergone prospective clinical validation or regulatory clearance.  
-> - It must **NEVER** be used to provide real-world clinical diagnoses, medical recommendations, or autonomous treatment planning.
+> - It has not undergone prospective clinical trials or regulatory certification.  
+> - It must **not** be used for clinical diagnosis, triage, or treatment decisions.

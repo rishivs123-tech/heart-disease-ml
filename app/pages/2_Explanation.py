@@ -1,7 +1,4 @@
-"""Prediction Explanation Interface - Explainable AI (XAI) Studio.
-
-Matches PRD Page 3 (Prediction Explanation) User Interface Requirements.
-"""
+"""Prediction Explanation Interface - Explainable AI (XAI) Studio."""
 
 import os
 import sys

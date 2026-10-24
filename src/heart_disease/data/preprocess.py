@@ -1,10 +1,10 @@
-"""Leakage-safe preprocessing and imputation pipelines for Heart Disease classification.
+"""Preprocessing and imputation pipelines for the heart disease dataset.
 
-Implements the four missing-data strategies defined in PRD FR-04:
-- M1: Simple median/mode imputation
-- M2: Median/mode imputation with missingness indicators
-- M3: KNN imputation for continuous variables + categorical mode imputation
-- M4: Iterative imputation (MICE) for continuous variables + categorical mode imputation
+Strategies:
+- M1: Median for numeric, mode for categorical
+- M2: Median/mode with missingness indicator flags
+- M3: KNN imputation (k=5) for numeric, mode for categorical
+- M4: MICE iterative imputation for numeric, mode for categorical
 """
 
 import logging

@@ -1,11 +1,11 @@
-"""Classifier factory module implementing the five supervised machine learning models.
+"""Model initialization and factory functions for the five classifiers.
 
-Matches PRD FR-03 and Section 11.1 initial configurations:
-1. Logistic Regression: C = 1.0, max_iter = 1000
-2. Random Forest: 200 trees, maximum depth 10
-3. Support Vector Machine: RBF kernel, C = 1.0, probability estimates enabled
+Default parameters follow standard benchmark settings:
+1. Logistic Regression: C=1.0, max_iter=1000, lbfgs solver
+2. Random Forest: 200 trees, max_depth=10
+3. Support Vector Machine: RBF kernel, C=1.0, probability=True
 4. K-Nearest Neighbors: 7 neighbors, uniform weights
-5. Gradient Boosting: 200 estimators, learning_rate = 0.1, maximum depth 2
+5. Gradient Boosting: 200 estimators, learning_rate=0.1, max_depth=2
 """
 
 from sklearn.base import BaseEstimator

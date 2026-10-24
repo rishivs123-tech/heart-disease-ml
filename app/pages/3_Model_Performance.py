@@ -1,7 +1,7 @@
 """Model Performance Benchmark Dashboard.
 
-Matches PRD Page 4 (Model Performance) User Interface Requirements.
-All metrics are loaded directly from saved experimental outputs.
+Displays empirical reproduction results, imputation strategy comparisons,
+ROC curves, confusion matrices, and paired statistical tests.
 """
 
 import os
@@ -84,7 +84,7 @@ with tabs[0]:
             use_container_width=True
         )
 
-        st.markdown("#### 🎯 Empirical Reproduction vs Reference Paper Benchmark")
+        st.markdown("#### Empirical Reproduction vs Reference Paper Benchmark")
         fig_bar = px.bar(
             df_baseline,
             x="model",
@@ -110,10 +110,10 @@ with tabs[0]:
 
 # Tab 2: Imputation Strategies Comparison
 with tabs[1]:
-    st.subheader("🧪 Imputation Strategy Evaluation Across 300 Cross-Validation Fits")
+    st.subheader("Imputation Strategy Evaluation Across 300 Cross-Validation Fits")
     st.markdown(
         """
-        Comparison of the 4 missing-data strategies defined in PRD FR-04:
+        Comparison of the 4 missing-data handling strategies:
         - **M1**: Simple Median (continuous) / Mode (categorical)
         - **M2**: Median/Mode + Binary Missingness Indicators
         - **M3**: Distance-Weighted K-Nearest Neighbors (KNN, $k=5$)
@@ -145,7 +145,7 @@ with tabs[1]:
 
 # Tab 3: ROC Curves & Confusion Matrices
 with tabs[2]:
-    st.subheader("📉 Test Set Receiver Operating Characteristic (ROC) & Diagnostic Matrices")
+    st.subheader("Test Set Receiver Operating Characteristic (ROC) & Diagnostic Matrices")
     c_img1, c_img2 = st.columns(2)
 
     roc_path = "results/figures/baseline_roc_curves.png"
@@ -165,10 +165,10 @@ with tabs[2]:
 
 # Tab 4: Statistical Significance Tests
 with tabs[3]:
-    st.subheader("📐 Paired Statistical Hypothesis Tests (Paired t-Test & Wilcoxon Signed-Rank)")
+    st.subheader("Paired Statistical Hypothesis Tests (Paired t-Test & Wilcoxon Signed-Rank)")
     st.markdown(
         """
-        In compliance with PRD Section 11.4, differences between imputation strategies were evaluated 
+        Differences between imputation strategies were evaluated 
         using **paired statistical tests** across identical cross-validation folds rather than assuming independent distributions.
         """
     )

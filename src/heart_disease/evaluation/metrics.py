@@ -1,14 +1,10 @@
-"""Comprehensive evaluation metrics for Heart Disease classification.
+"""Evaluation metrics for binary classification models.
 
-Matches PRD FR-05:
-- Accuracy
-- Precision
-- Recall / Sensitivity
-- Specificity (True Negative Rate)
-- F1-Score
-- Matthews Correlation Coefficient (MCC)
+Calculates:
+- Accuracy, Precision, Recall, Specificity
+- F1-Score, Matthews Correlation Coefficient (MCC)
 - ROC-AUC
-- Confusion Matrix parameters (TN, FP, FN, TP)
+- Confusion matrix counts (TN, FP, FN, TP)
 """
 
 import numpy as np

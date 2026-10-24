@@ -1,7 +1,4 @@
-"""Heart Disease Prediction Interface.
-
-Matches PRD Page 2 (Heart Disease Prediction) User Interface Requirements.
-"""
+"""Heart Disease Prediction Interface."""
 
 import os
 import sys

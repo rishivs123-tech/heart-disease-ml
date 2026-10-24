@@ -1,8 +1,7 @@
 """Research Findings and Dissertation Synthesis Dashboard.
 
-Matches PRD Page 5 (Research Findings) User Interface Requirements.
 Presents empirical evaluation of Hypotheses H1-H3, SHAP explanation stability,
-and critical academic conclusions.
+and discussion of clinical and ethical implications.
 """
 
 import os
@@ -44,7 +43,7 @@ st.set_page_config(
 
 apply_custom_theme()
 
-st.title("🔬 Research Findings & Explanation Stability")
+st.title("Research Findings & Explanation Stability")
 st.markdown("Investigating the core research question: *Do predictive accuracy, imputation strategy, and SHAP explanation stability exhibit trade-offs?*")
 
 display_medical_disclaimer()
@@ -60,15 +59,15 @@ if os.path.exists(hypo_path):
         hypo_data = json.load(f)
 
 tabs = st.tabs([
-    "🧪 Empirical Hypotheses Evaluation (H1, H2, H3)",
-    "📐 SHAP Explanation Stability Analysis",
-    "🌍 Global Feature Importance Hierarchies",
-    "⚠️ Limitations & Ethical Considerations"
+    "Hypotheses Evaluation (H1, H2, H3)",
+    "SHAP Explanation Stability Analysis",
+    "Global Feature Importance Hierarchies",
+    "Limitations & Ethical Considerations"
 ])
 
 # Tab 1: Hypothesis Evaluation
 with tabs[0]:
-    st.subheader("📋 Empirical Hypothesis Testing Status")
+    st.subheader("Hypothesis Testing Outcomes")
 
     h1 = hypo_data.get("H1", {})
     h2 = hypo_data.get("H2", {})
@@ -80,7 +79,7 @@ with tabs[0]:
             <div class="metric-card" style="margin-bottom: 1.2rem; border-left: 6px solid #10b981;">
                 <h4 style="margin: 0; color: #065f46;">Hypothesis H1: Missing-Data Strategies & Predictive Performance</h4>
                 <p style="margin: 0.4rem 0;"><em>"{h1.get('hypothesis', 'Missing-data handling strategies produce measurable differences in predictive performance.')}"</em></p>
-                <p><strong>Empirical Outcome:</strong> <span style="background-color: #d1fae5; color: #065f46; font-weight: bold; padding: 2px 8px; border-radius: 4px;">✅ SUPPORTED</span></p>
+                <p><strong>Empirical Outcome:</strong> <span style="background-color: #d1fae5; color: #065f46; font-weight: bold; padding: 2px 8px; border-radius: 4px;">SUPPORTED</span></p>
                 <p style="font-size: 0.92rem; color: #374151;"><strong>Observed Evidence:</strong> {h1.get('evidence', 'Demonstrated statistically significant differences across M1-M4.')}</p>
             </div>
             """,
@@ -92,7 +91,7 @@ with tabs[0]:
             <div class="metric-card" style="margin-bottom: 1.2rem; border-left: 6px solid #10b981;">
                 <h4 style="margin: 0; color: #065f46;">Hypothesis H2: SHAP Explanation Sensitivity</h4>
                 <p style="margin: 0.4rem 0;"><em>"{h2.get('hypothesis', 'SHAP explanations vary across models, data splits, and imputation strategies.')}"</em></p>
-                <p><strong>Empirical Outcome:</strong> <span style="background-color: #d1fae5; color: #065f46; font-weight: bold; padding: 2px 8px; border-radius: 4px;">✅ SUPPORTED</span></p>
+                <p><strong>Empirical Outcome:</strong> <span style="background-color: #d1fae5; color: #065f46; font-weight: bold; padding: 2px 8px; border-radius: 4px;">SUPPORTED</span></p>
                 <p style="font-size: 0.92rem; color: #374151;"><strong>Observed Evidence:</strong> {h2.get('evidence', 'SHAP feature rankings and patient-level attributions demonstrated measurable variance.')}</p>
             </div>
             """,
@@ -104,7 +103,7 @@ with tabs[0]:
             <div class="metric-card" style="margin-bottom: 1.2rem; border-left: 6px solid #10b981;">
                 <h4 style="margin: 0; color: #065f46;">Hypothesis H3: Predictive Accuracy vs Explanation Stability Trade-off</h4>
                 <p style="margin: 0.4rem 0;"><em>"{h3.get('hypothesis', 'The model with the best predictive performance may not have the most stable explanations.')}"</em></p>
-                <p><strong>Empirical Outcome:</strong> <span style="background-color: #d1fae5; color: #065f46; font-weight: bold; padding: 2px 8px; border-radius: 4px;">✅ SUPPORTED</span></p>
+                <p><strong>Empirical Outcome:</strong> <span style="background-color: #d1fae5; color: #065f46; font-weight: bold; padding: 2px 8px; border-radius: 4px;">SUPPORTED</span></p>
                 <p style="font-size: 0.92rem; color: #374151;"><strong>Observed Evidence:</strong> {h3.get('evidence', 'While ensemble models achieved highest accuracy, linear models achieved superior attribution invariance.')}</p>
             </div>
             """,
@@ -113,11 +112,11 @@ with tabs[0]:
 
 # Tab 2: Explanation Stability Analysis
 with tabs[1]:
-    st.subheader("📐 Quantitative Explanation Stability Metrics")
+    st.subheader("Quantitative Explanation Stability Metrics")
     st.markdown(
         """
-        In compliance with PRD Section 11.3, explanation stability was quantified using four rigorous mathematical metrics
-        evaluated on a fixed reference test cohort ($N=100$) across repeated model runs and imputation strategies:
+        Explanation stability was evaluated using four quantitative metrics
+        on a fixed reference test cohort ($N=100$) across repeated model runs and imputation strategies:
         - **Spearman Rank Correlation**: Consistency of ordinal feature rankings ($[-1, 1]$).
         - **Top-5 Jaccard Similarity**: Overlap proportion of the 5 most decisive clinical attributes ($[0, 1]$).
         - **Patient-Level Attribution Correlation**: Mean Pearson correlation between individual patient SHAP vectors.
@@ -148,7 +147,7 @@ with tabs[1]:
 
 # Tab 3: Global Feature Importance
 with tabs[2]:
-    st.subheader("🌍 Global SHAP Feature Importance Hierarchy")
+    st.subheader("Global SHAP Feature Importance Hierarchy")
     st.markdown(r"Average absolute impact on model output across the entire patient cohort ($\mathbb{E}[|\phi_i|]$).")
 
     summary_img = "results/figures/shap_rf_summary.png"
@@ -168,11 +167,9 @@ with tabs[2]:
 
 # Tab 4: Limitations & Ethical Considerations
 with tabs[3]:
-    st.subheader("⚠️ Critical Limitations & Ethical Discussion")
+    st.subheader("Limitations & Ethical Considerations")
     st.markdown(
         """
-        Matches PRD Section 5.2 and Section 17:
-        
         1. **Cohort Demographics & Historical Bias**:
            - The 920-record dataset originates from 1980s cardiology centers (predominantly male subjects, age 28–77).
            - Performance and feature importance rankings must not be assumed to generalize across modern diverse demographic cohorts without prospective external validation.
@@ -186,6 +183,7 @@ with tabs[3]:
            - Imputation strategies model these distributions mathematically but cannot replace uncollected diagnostic tests.
         
         4. **Research Prototype Designation**:
-           - Outputs from this software must never be used for autonomous clinical diagnosis or treatment alterations.
+           - Outputs from this software are intended for scientific inquiry and must never be used for autonomous clinical diagnosis or treatment alterations.
         """
     )
+

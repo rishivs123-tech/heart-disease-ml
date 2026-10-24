@@ -1,9 +1,8 @@
-"""SHAP Explanation Stability evaluation module.
+"""SHAP explanation stability metrics.
 
-Matches PRD FR-08, Section 11.3, and Research Questions RQ3, RQ4:
-- Global stability: Spearman rank correlation and Top-k Jaccard similarity
-- Local patient-level stability: Mean Absolute Difference (MAD) and attribution correlation
-- Hypothesis testing for H1, H2, and H3
+Evaluates:
+- Global stability: Spearman rank correlation and Top-k Jaccard index
+- Local stability: Mean Absolute Difference (MAD) and Pearson attribution correlation
 """
 
 import numpy as np

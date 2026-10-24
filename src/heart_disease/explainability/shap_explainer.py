@@ -1,8 +1,7 @@
-"""SHAP Explanation module for global and patient-level heart disease interpretability.
+"""SHAP explanation utilities for local and global interpretability.
 
-Matches PRD FR-06, FR-07, and Section 11.3:
-- Model-specific explainers (TreeExplainer, LinearExplainer, KernelExplainer)
-- Patient-level waterfall attributions and log-odds / probability explanations
+Provides wrappers around TreeExplainer, LinearExplainer, and KernelExplainer to generate:
+- Patient-level attribution waterfall plots
 - Global feature importance rankings
 """
 

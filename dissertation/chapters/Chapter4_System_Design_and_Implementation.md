@@ -1,7 +1,7 @@
 # Chapter 4: System Design and Implementation
 
 ## 4.1 System Architectural Overview
-To satisfy the requirements of academic reproducibility and high software maintainability (PRD Section 8 & Section 10), the system is structured into five distinct, loosely-coupled layers:
+To satisfy the requirements of academic reproducibility and high software maintainability, the system is structured into five distinct, loosely-coupled layers:
 
 ```mermaid
 graph TD

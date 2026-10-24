@@ -1,5 +1,5 @@
 # Experiment Configuration for Missing-Data Strategies and SHAP Stability
-# Matches PRD Section 9 (FR-04, FR-08) & Section 11 (11.2, 11.3)
+# Protocol definitions for imputation comparison and stability evaluation
 
 imputation_strategies:
   M1:

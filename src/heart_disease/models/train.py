@@ -1,10 +1,10 @@
-"""Model training, evaluation on held-out test cohort, and artifact persistence module.
+"""Model training and artifact serialization module.
 
-Matches PRD Layer 3 (Machine learning layer) and Non-Functional Requirements:
-- Fits complete leakage-safe pipelines
-- Evaluates on the held-out test split (184 records)
-- Serializes fitted pipelines with Joblib to artifacts/models/
-- Saves metadata (hyperparameters, performance, feature schema) to artifacts/metadata/
+Handles:
+- Fitting preprocessor + classifier pipelines
+- Evaluation on the test set
+- Saving fitted pipelines to artifacts/models/
+- Saving run metadata to artifacts/metadata/
 """
 
 import datetime

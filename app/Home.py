@@ -1,7 +1,4 @@
-"""Heart Disease Prediction & Explainability System - Main Entry Point.
-
-Matches PRD Page 1 (Home) User Interface Requirements.
-"""
+"""Heart Disease Prediction & Explainability System - Main Entry Point."""
 
 import os
 import sys
@@ -35,12 +32,12 @@ apply_custom_theme()
 st.markdown(
     """
     <div class="main-header">
-        <h1 style="margin: 0; font-size: 2.4rem; font-weight: 800;">🫀 Heart Disease Prediction Using Machine Learning</h1>
-        <p style="margin: 0.5rem 0 0 0; font-size: 1.15rem; opacity: 0.95;">
+        <h1 style="margin: 0; font-size: 2.2rem; font-weight: 700;">Heart Disease Prediction Using Machine Learning</h1>
+        <p style="margin: 0.5rem 0 0 0; font-size: 1.1rem; opacity: 0.95;">
             <strong>Research Extension:</strong> Explainable & Robust Heart Disease Prediction: Evaluating Missing-Data Strategies and SHAP Explanation Stability
         </p>
         <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem; opacity: 0.85;">
-            Master of Engineering (ME) Dissertation Research Prototype & Scientific Reproducibility Framework
+            Master of Engineering (ME) Dissertation Research Framework
         </p>
     </div>
     """,
@@ -68,7 +65,7 @@ st.markdown("---")
 left_col, right_col = st.columns([3, 2])
 
 with left_col:
-    st.subheader("📌 Project Overview & Research Motivation")
+    st.subheader("Project Overview & Research Motivation")
     st.markdown(
         """
         Cardiovascular diseases remain the leading cause of global mortality. While machine learning algorithms demonstrate 
@@ -82,7 +79,7 @@ with left_col:
         """
     )
     
-    st.subheader("🎯 Primary Research Questions")
+    st.subheader("Primary Research Questions")
     st.markdown(
         """
         - **RQ1 (Baseline Reproduction)**: Can the published classification metrics be reproduced using the reported 80/20 train/test protocol?
@@ -93,7 +90,7 @@ with left_col:
     )
 
 with right_col:
-    st.subheader("🏗️ System Architecture (5 Layers)")
+    st.subheader("System Architecture")
     st.markdown(
         """
         - **Layer 1: Dataset Layer**: Multi-center raw data ingestion (Cleveland, Hungary, Switzerland, VA Long Beach) and schema verification.
@@ -104,10 +101,11 @@ with right_col:
         """
     )
     
-    st.info("💡 **Navigation Guide**: Use the sidebar to explore Patient Prediction, Patient SHAP Explanations, Model Performance Benchmarks, and Research Findings.")
+    st.info("Use the sidebar to explore Patient Prediction, Patient SHAP Explanations, Model Performance Benchmarks, and Research Findings.")
 
 st.markdown("---")
-st.subheader("🔍 Dataset Cohort Inspection (Cleaned 920-Record Sample)")
+st.subheader("Dataset Cohort Inspection (Cleaned 920-Record Sample)")
 st.dataframe(load_dataset_sample(8), use_container_width=True)
 
 st.caption("Heart Disease Machine Learning System • Version 1.0 • Academic Research Software Prototype")
+

@@ -1,11 +1,7 @@
-"""SHAP Stability Experiment runner and Hypothesis Evaluation.
+"""SHAP stability evaluation across models, seeds, and imputation strategies.
 
-Matches PRD FR-08, Section 11.3, and Research Questions RQ3, RQ4:
-- Computes SHAP values on a fixed 100-record reference test cohort across models, splits, and imputation methods
-- Computes Spearman rank correlation, Top-k Jaccard (k=3, 5), patient-level MAD, attribution correlation
-- Generates stability heatmaps and SHAP summary plots
-- Formulates formal empirical evaluation of Hypotheses H1, H2, and H3
-- Exports findings to results/logs/hypothesis_evaluation.json and .md
+Computes global rank stability (Spearman, Top-k Jaccard) and local attribution stability
+(patient-level MAD, correlation) across runs.
 """
 
 import json

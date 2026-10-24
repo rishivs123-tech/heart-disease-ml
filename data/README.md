@@ -48,7 +48,7 @@ The combined 920-record dataset originates from four clinical cardiology institu
 
 ## 4. Physiologically Invalid Measurements Handling
 In clinical medicine, resting blood pressure (`trestbps`) and serum cholesterol (`chol`) cannot physically be zero in a living patient. In the original raw UCI files, certain recording centers (notably Switzerland and VA Long Beach) recorded missing measurements as 0. 
-Following the PRD specifications:
+Following clinical data preprocessing protocols:
 - 1 occurrence of `trestbps = 0` is converted to `NaN`.
 - 172 occurrences of `chol = 0` are converted to `NaN`.
 These missing values are subsequently handled rigorously using the four experimental imputation strategies (M1, M2, M3, M4) within cross-validation folds to prevent information leakage.

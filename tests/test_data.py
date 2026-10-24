@@ -38,7 +38,7 @@ def test_clean_and_format_dataset():
 
 
 def test_processed_dataset_acceptance():
-    """Verify that the actual saved processed dataset satisfies PRD acceptance criteria."""
+    """Verify that the actual saved processed dataset matches expected schema and counts."""
     data_path = "data/processed/heart_disease_cleaned.csv"
     if not os.path.exists(data_path):
         pytest.skip("Processed dataset not yet generated.")

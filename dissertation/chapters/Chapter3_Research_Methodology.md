@@ -14,7 +14,7 @@ The original angiographic target variable (`num`) encodes disease severity on an
 - `num = 0`: Absence of significant coronary artery disease (< 50% stenosis in any major vessel). Total: 411 patients (44.67%).
 - `num = 1, 2, 3, 4`: Presence of coronary artery disease ($\ge 50\%$ diameter stenosis). Total: 509 patients (55.33%).
 
-Following the reference study and PRD Section 6.5, the problem is formulated as binary classification:
+Following the reference study and clinical diagnostic conventions, the problem is formulated as binary classification:
 $$y = \begin{cases} 0, & \text{if } \text{num} = 0 \text{ (Disease Absent)} \\ 1, & \text{if } \text{num} > 0 \text{ (Disease Present)} \end{cases}$$
 
 ## 3.2 Leakage-Safe Data Preprocessing

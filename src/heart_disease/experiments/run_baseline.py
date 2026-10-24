@@ -1,11 +1,7 @@
-"""Baseline Reproduction Experiment runner.
+"""Baseline model reproduction experiments.
 
-Matches PRD Phase 2 and Section 11.1:
-- Evaluates the five baseline classifiers on the 80/20 split and 5-fold CV
-- Computes Accuracy, Precision, Recall, Specificity, F1, MCC, ROC-AUC
-- Compares empirical results against reference study benchmarks
-- Saves metrics to results/metrics/baseline_reproduction.csv
-- Generates publication-ready figures in results/figures/
+Evaluates 5 baseline classifiers on the 80/20 test split and 5-fold CV,
+computing performance metrics and generating comparison plots.
 """
 
 import json

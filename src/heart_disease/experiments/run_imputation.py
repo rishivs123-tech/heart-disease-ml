@@ -1,10 +1,7 @@
-"""Missing-Data Imputation Experiment runner.
+"""Missing-data imputation experiments.
 
-Matches PRD FR-04, Section 11.2, and Research Question RQ2:
-- Evaluates 5 classifiers across 4 missing-data strategies (M1, M2, M3, M4)
-- Repeated across 3 random seeds (42, 101, 2024) and 5 folds = 300 evaluations
-- Conducts paired t-tests and Wilcoxon signed-rank tests
-- Generates comparative boxplots, bar charts, and metric exports
+Compares 5 classifiers across 4 missing-data strategies (M1, M2, M3, M4)
+using repeated stratified cross-validation (3 seeds x 5 folds = 300 evaluations).
 """
 
 import itertools

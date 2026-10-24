@@ -116,7 +116,7 @@ The original angiographic target variable (`num`) encodes disease severity on an
 - `num = 0`: Absence of significant coronary artery disease (< 50% stenosis in any major vessel). Total: 411 patients (44.67%).
 - `num = 1, 2, 3, 4`: Presence of coronary artery disease ($\ge 50\%$ diameter stenosis). Total: 509 patients (55.33%).
 
-Following the reference study and PRD Section 6.5, the problem is formulated as binary classification:
+Following the reference study and clinical diagnostic conventions, the problem is formulated as binary classification:
 $$y = \begin{cases} 0, & \text{if } \text{num} = 0 \text{ (Disease Absent)} \\ 1, & \text{if } \text{num} > 0 \text{ (Disease Present)} \end{cases}$$
 
 ## 3.2 Leakage-Safe Data Preprocessing
@@ -176,7 +176,7 @@ Explanation stability was assessed on a fixed reference test cohort ($N = 100$ r
 # Chapter 4: System Design and Implementation
 
 ## 4.1 System Architectural Overview
-To satisfy the requirements of academic reproducibility and high software maintainability (PRD Section 8 & Section 10), the system is structured into five distinct, loosely-coupled layers:
+To satisfy the requirements of academic reproducibility and high software maintainability, the system is structured into five distinct, loosely-coupled layers:
 
 ```mermaid
 graph TD
@@ -250,7 +250,7 @@ Table 5.1 summarizes the empirical performance achieved across the five baseline
 1. **Concordance with Published Literature**:
    All five reproduced classifiers achieved accuracies within 1.0% to 4.3% of the reference study. **Gradient Boosting** emerged as the top-performing classifier, achieving 83.70% accuracy, 87.63% precision, 85.43% F1-score, and an MCC of 0.6729. **Support Vector Machine** demonstrated the second-highest performance (82.61% accuracy, 84.00% F1-score), closely followed by **Logistic Regression** (81.52%).
 2. **Analysis of Discrepancies**:
-   In strict adherence to PRD Section 11.1, the observed differences are transparently documented rather than forced to match. Key contributors to the slight discrepancy include:
+   In strict adherence to rigorous scientific reporting, the observed differences are transparently documented rather than forced to match. Key contributors to the slight discrepancy include:
    - **Modern Scikit-Learn Solvers**: Modern scikit-learn versions utilize enhanced numerical optimization routines (such as updated L-BFGS tolerance thresholds and calibrated probability estimation) compared to older toolkits.
    - **Handling of Physiologically Invalid Measurements**: Our rigorous preprocessing explicitly flagged 172 records with `chol = 0` and 1 record with `trestbps = 0` as missing rather than treating 0 as a genuine physiological measurement, preserving data integrity.
 

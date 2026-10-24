@@ -1,5 +1,5 @@
 # Model Configurations and Hyperparameter Search Grids
-# Matches PRD Section 8 & Section 11
+# Default configurations and tuning parameters
 
 models:
   logistic_regression:

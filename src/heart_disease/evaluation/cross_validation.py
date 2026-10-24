@@ -1,8 +1,6 @@
-"""Leakage-safe repeated Stratified K-Fold Cross-Validation runner.
+"""Stratified K-Fold cross-validation routines.
 
-Matches PRD Section 11.1 and 11.2 experimental protocol.
-Ensures that all imputation, scaling, and encoding transformations are fitted
-strictly on the training partition of each fold.
+Transforms (imputation, scaling, encoding) are fitted strictly on the training partition of each fold.
 """
 
 import logging

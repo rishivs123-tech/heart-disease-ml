@@ -1,9 +1,8 @@
-"""Statistical significance analysis and hypothesis testing for model and imputation comparisons.
+"""Statistical significance tests and confidence intervals for experimental comparisons.
 
-Matches PRD Section 11.4:
-- Paired t-tests and Wilcoxon signed-rank tests for paired cross-validation folds
-- 95% confidence intervals (t-distribution)
-- Corrected repeated k-fold test considerations (Nadeau & Bengio corrected variance)
+Includes:
+- Paired t-tests and Wilcoxon signed-rank tests
+- 95% confidence intervals based on Student's t-distribution
 """
 
 import numpy as np

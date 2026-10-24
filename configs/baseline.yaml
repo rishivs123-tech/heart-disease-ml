@@ -1,5 +1,5 @@
 # Baseline Configuration for Heart Disease Prediction
-# Matches PRD Section 11: Experimental Methodology
+# Study parameters and feature specifications
 
 project:
   name: "Heart Disease Prediction Using Machine Learning"

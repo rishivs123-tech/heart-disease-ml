@@ -82,7 +82,7 @@ def apply_custom_theme():
 
 
 def display_medical_disclaimer():
-    """Render mandatory academic research disclaimer matching PRD FR-12."""
+    """Render academic research and medical disclaimer."""
     st.markdown(
         """
         <div class="disclaimer-card">
